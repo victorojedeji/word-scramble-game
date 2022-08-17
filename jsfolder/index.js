@@ -15,7 +15,23 @@ const checkWordBtn = document.querySelector(".check-word");
 let checkWord;
 
 
+const initTimer = (maxTime) => {
+    clearInterval(timer);
+    timer = setInterval(() => {
+        if(maxTime > 0) {
+            maxTime--;
+           return TimeLeft.innerText = maxTime;
+        }
+
+        clearInterval(timer);
+        alert(`Out of Time!, ${checkWord} was the right word, try again.`);
+        startGame();
+    }, 1000)
+}
+
+
 function startGame() {
+    initTimer(30)
     let randomObj = words;
     let randomNumb = Math.floor(Math.random() * randomObj.length);
     let randomObjValue = randomObj[randomNumb];
@@ -34,6 +50,7 @@ function startGame() {
     wordTxt.innerText = strWord.join("").toUpperCase()
     definitionTxt.innerText = randomObjValue.definition;
     checkWord = randomObjValue.word;
+    inputField.setAttribute("maxlength", checkWord.length);
 };
 startGame();
 
@@ -59,3 +76,4 @@ const check = () => {
     });
 };
 check();
+
