@@ -1,5 +1,3 @@
-
-
 const wordTxt = document.querySelector(".word");
 
 const definitionTxt = document.querySelector(".definition");
