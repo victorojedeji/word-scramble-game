@@ -2,7 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 body {
@@ -40,6 +40,7 @@ main {
     text-align: center;
     line-height: 1.2;
     font-size: 1.5rem;
+    letter-spacing: .5em;
 }
 
 main p {
@@ -82,6 +83,7 @@ main p {
     border-radius: .2rem;
     color: white;
     transition: all .5s;
+    cursor: pointer;
 }
 
 .refresh-btn {
