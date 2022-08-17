@@ -16,7 +16,7 @@ let checkWord;
 
 
 const initTimer = maxTime => {
-    
+    clearInterval(timer);
 
     timer = setInterval(() => {
         if(maxTime > 0) {
