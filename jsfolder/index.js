@@ -13,10 +13,9 @@ const refreshBtn = document.querySelector(".refresh-btn");
 const checkWordBtn = document.querySelector(".check-word");
 
 let checkWord;
-
+let timer;
 
 const initTimer = maxTime => {
-    clearInterval(timer);
 
     timer = setInterval(() => {
         if(maxTime > 0) {
@@ -31,6 +30,7 @@ const initTimer = maxTime => {
 
 
 function startGame() {
+    clearInterval(timer)
     initTimer(30)
     let randomObj = words;
     let randomNumb = Math.floor(Math.random() * randomObj.length);
@@ -54,6 +54,8 @@ function startGame() {
 };
 startGame();
 
+
+
 refreshBtn.addEventListener("click", startGame);
 
 
@@ -62,18 +64,22 @@ const check = () => {
     checkWordBtn.addEventListener("click", () => {
         let inputTxt = inputField.value.toLowerCase();
         checkWordVal = checkWord.toLowerCase();
+        
         if(!inputTxt){
         return alert("You have to enter a word to check!")
-        }; if(inputTxt && (inputTxt == checkWordVal)){
+        }; 
+        
+        if(inputTxt && (inputTxt == checkWordVal)){
         alert(`You got it!, ${inputTxt} is the correct word.`)
         inputField.value = "";
+        
         startGame();
         };
+        
         if(inputTxt && (inputTxt !== checkWordVal)){
-            alert(`You are wrong!, ${inputTxt} is not the right word, try again.`);
+            alert(`You are wrong!, ${inputTxt} is not the right word, keep playing.`);
             inputField.value = "";
         }
     });
 };
 check();
-
