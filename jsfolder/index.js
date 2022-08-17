@@ -15,16 +15,16 @@ const checkWordBtn = document.querySelector(".check-word");
 let checkWord;
 
 
-const initTimer = (maxTime) => {
-    clearInterval(timer);
+const initTimer = maxTime => {
+    
+
     timer = setInterval(() => {
         if(maxTime > 0) {
             maxTime--;
            return TimeLeft.innerText = maxTime;
         }
-
         clearInterval(timer);
-        alert(`Out of Time!, ${checkWord} was the right word, try again.`);
+        alert(`Out of Time!, ${checkWord.toUpperCase()} was the right word, try again.`);
         startGame();
     }, 1000)
 }
