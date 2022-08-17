@@ -46,7 +46,7 @@ const check = () => {
         let inputTxt = inputField.value.toLowerCase();
         checkWordVal = checkWord.toLowerCase();
         if(!inputTxt){
-        return alert("You have to write something to check!")
+        return alert("You have to enter a word to check!")
         }; if(inputTxt && (inputTxt == checkWordVal)){
         alert(`You got it!, ${inputTxt} is the correct word.`)
         inputField.value = "";
