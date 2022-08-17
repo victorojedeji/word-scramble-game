@@ -48,8 +48,14 @@ const check = () => {
         if(!inputTxt){
         return alert("You have to write something to check!")
         }; if(inputTxt && (inputTxt == checkWordVal)){
-        return alert(`You got it, ${inputTxt} is the correct word!`)
+        alert(`You got it!, ${inputTxt} is the correct word.`)
+        inputField.value = "";
+        startGame();
         };
+        if(inputTxt && (inputTxt !== checkWordVal)){
+            alert(`You are wrong!, ${inputTxt} is not the right word, try again.`);
+            inputField.value = "";
+        }
     });
 };
 check();
